@@ -12,6 +12,7 @@ import {
   TruckIcon,
   CurrencyDollarIcon,
   Cog6ToothIcon,
+  UserIcon, // Add the UserIcon for the Customer menu item
 } from "@heroicons/react/24/outline";
 
 const navigation = [
@@ -43,6 +44,12 @@ const navigation = [
     name: "Delivery Captains",
     icon: TruckIcon,
     href: "/delivery-captains",
+    badge: null,
+  },
+  {
+    name: "Customers", // Add the Customer menu item
+    icon: UserIcon,
+    href: "/customers",
     badge: null,
   },
   {

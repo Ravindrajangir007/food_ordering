@@ -3,7 +3,7 @@ import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 const Product = ({ product, onEdit, onDelete }) => {
   return (
-    <div className="bg-white shadow rounded-lg p-4 mb-4">
+    <div className="bg-gray-100 shadow rounded-lg p-4 mb-4">
       <h2 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h2>
       <div className="text-sm text-gray-500 mb-4">{product.description}</div>
 
@@ -55,7 +55,7 @@ const Product = ({ product, onEdit, onDelete }) => {
           {product.items.length > 0 ? (
             <div className="mb-4 rounded-xl overflow-hidden">
               <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
+                <thead className="bg-gray-200">
                   <tr>
                     <th
                       scope="col"

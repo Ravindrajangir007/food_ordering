@@ -13,6 +13,10 @@ import InventoryReport from "./components/reports/InventoryReport";
 import SalesReport from "./components/reports/SalesReport";
 import ProductList from "./components/products/ProductList";
 import OrderList from "./components/orders/OrderList";
+import PaymentList from "./components/payments/PaymentList";
+import DeliveryCaptainManager from "./components/captain/DeliveryCaptainManager";
+import Customers from "./components/customers/Customers";
+import VendorSettings from "./components/settings/VendorSettings";
 
 const AppRoutes = () => {
   const { loading } = useAuth();
@@ -105,6 +109,46 @@ const AppRoutes = () => {
           <ProtectedRoute>
             <Layout>
               <OrderList />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/payments"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <PaymentList />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/delivery-captains"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <DeliveryCaptainManager />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/customers"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <Customers />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/settings"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <VendorSettings />
             </Layout>
           </ProtectedRoute>
         }
