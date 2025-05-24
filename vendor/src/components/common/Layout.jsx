@@ -6,13 +6,13 @@ export default function Layout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-sky-50">
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-      <div className="lg:pl-72">
+      <div className="lg:pl-56">
         <Header setSidebarOpen={setSidebarOpen} />
 
-        <main className="p-5">
+        <main className="p-3">
           <div>{children}</div>
         </main>
       </div>

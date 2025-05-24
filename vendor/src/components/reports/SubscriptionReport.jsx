@@ -166,8 +166,8 @@ export default function SubscriptionReport() {
                     <div className="text-2xl font-semibold text-gray-900">
                       520
                     </div>
-                    <div className="ml-2 flex items-baseline text-sm font-semibold text-green-600">
-                      <ArrowTrendingUpIcon className="self-center flex-shrink-0 h-5 w-5 text-green-500" />
+                    <div className="ml-2 flex items-baseline text-sm font-semibold text-yellow-600">
+                      <ArrowTrendingUpIcon className="self-center flex-shrink-0 h-5 w-5 text-yellow-500" />
                       <span className="ml-1">8.2%</span>
                     </div>
                   </dd>
@@ -192,8 +192,8 @@ export default function SubscriptionReport() {
                     <div className="text-2xl font-semibold text-gray-900">
                       ₹1,25,000
                     </div>
-                    <div className="ml-2 flex items-baseline text-sm font-semibold text-green-600">
-                      <ArrowTrendingUpIcon className="self-center flex-shrink-0 h-5 w-5 text-green-500" />
+                    <div className="ml-2 flex items-baseline text-sm font-semibold text-yellow-600">
+                      <ArrowTrendingUpIcon className="self-center flex-shrink-0 h-5 w-5 text-yellow-500" />
                       <span className="ml-1">12.5%</span>
                     </div>
                   </dd>
@@ -250,8 +250,8 @@ export default function SubscriptionReport() {
                   <div className="text-2xl font-semibold text-gray-900">
                     2.5%
                   </div>
-                  <div className="ml-2 flex items-baseline text-sm font-semibold text-green-600">
-                    <ArrowTrendingDownIcon className="self-center flex-shrink-0 h-5 w-5 text-green-500" />
+                  <div className="ml-2 flex items-baseline text-sm font-semibold text-yellow-600">
+                    <ArrowTrendingDownIcon className="self-center flex-shrink-0 h-5 w-5 text-yellow-500" />
                     <span className="ml-1">0.5%</span>
                   </div>
                 </dd>
@@ -342,7 +342,7 @@ export default function SubscriptionReport() {
                       <span className="text-sm font-medium text-gray-900">
                         Renewal Rate
                       </span>
-                      <span className="text-lg font-semibold text-green-600">
+                      <span className="text-lg font-semibold text-yellow-600">
                         85%
                       </span>
                     </div>
@@ -362,7 +362,7 @@ export default function SubscriptionReport() {
                       <span className="text-sm font-medium text-gray-900">
                         Customer Satisfaction
                       </span>
-                      <span className="text-lg font-semibold text-green-600">
+                      <span className="text-lg font-semibold text-yellow-600">
                         4.5/5.0
                       </span>
                     </div>
@@ -385,7 +385,7 @@ export default function SubscriptionReport() {
                         <span className="text-lg font-semibold text-gray-900 mr-2">
                           45
                         </span>
-                        <span className="text-sm text-green-600">+12%</span>
+                        <span className="text-sm text-yellow-600">+12%</span>
                       </div>
                     </div>
                   </div>
@@ -398,7 +398,7 @@ export default function SubscriptionReport() {
                         <span className="text-lg font-semibold text-gray-900 mr-2">
                           15%
                         </span>
-                        <span className="text-sm text-green-600">+3%</span>
+                        <span className="text-sm text-yellow-600">+3%</span>
                       </div>
                     </div>
                   </div>
@@ -411,7 +411,7 @@ export default function SubscriptionReport() {
                         <span className="text-lg font-semibold text-gray-900 mr-2">
                           18%
                         </span>
-                        <span className="text-sm text-green-600">+5%</span>
+                        <span className="text-sm text-yellow-600">+5%</span>
                       </div>
                     </div>
                   </div>

@@ -209,8 +209,8 @@ export default function SalesReport() {
                     <div className="text-2xl font-semibold text-gray-900">
                       ₹39,900
                     </div>
-                    <div className="ml-2 flex items-baseline text-sm font-semibold text-green-600">
-                      <ArrowTrendingUpIcon className="self-center flex-shrink-0 h-5 w-5 text-green-500" />
+                    <div className="ml-2 flex items-baseline text-sm font-semibold text-yellow-600">
+                      <ArrowTrendingUpIcon className="self-center flex-shrink-0 h-5 w-5 text-yellow-500" />
                       <span className="ml-1">12.5%</span>
                     </div>
                   </dd>
@@ -235,8 +235,8 @@ export default function SalesReport() {
                     <div className="text-2xl font-semibold text-gray-900">
                       245
                     </div>
-                    <div className="ml-2 flex items-baseline text-sm font-semibold text-green-600">
-                      <ArrowTrendingUpIcon className="self-center flex-shrink-0 h-5 w-5 text-green-500" />
+                    <div className="ml-2 flex items-baseline text-sm font-semibold text-yellow-600">
+                      <ArrowTrendingUpIcon className="self-center flex-shrink-0 h-5 w-5 text-yellow-500" />
                       <span className="ml-1">8.2%</span>
                     </div>
                   </dd>
@@ -287,8 +287,8 @@ export default function SalesReport() {
                     <div className="text-2xl font-semibold text-gray-900">
                       ₹5,700
                     </div>
-                    <div className="ml-2 flex items-baseline text-sm font-semibold text-green-600">
-                      <ArrowTrendingUpIcon className="self-center flex-shrink-0 h-5 w-5 text-green-500" />
+                    <div className="ml-2 flex items-baseline text-sm font-semibold text-yellow-600">
+                      <ArrowTrendingUpIcon className="self-center flex-shrink-0 h-5 w-5 text-yellow-500" />
                       <span className="ml-1">5.7%</span>
                     </div>
                   </dd>

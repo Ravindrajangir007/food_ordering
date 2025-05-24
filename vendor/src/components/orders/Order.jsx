@@ -11,7 +11,7 @@ const Order = ({ order, onEdit, onDelete }) => {
       case "Shipped":
         return "bg-blue-500 text-white";
       case "Delivered":
-        return "bg-green-500 text-white";
+        return "bg-yellow-500 text-white";
       case "Cancelled":
         return "bg-red-500 text-white";
       default:

@@ -1,89 +1,125 @@
-import { ArrowUpIcon, ArrowDownIcon } from "@heroicons/react/24/solid";
+import React from "react";
 import {
+  ChartBarIcon,
   CurrencyRupeeIcon,
-  UsersIcon,
   ShoppingCartIcon,
-  ShoppingBagIcon,
+  UsersIcon,
 } from "@heroicons/react/24/outline";
 
-const statsConfig = [
-  {
-    id: "totalRevenue",
-    name: "Total Revenue",
-    icon: CurrencyRupeeIcon,
-    iconBackground: "bg-indigo-500",
-  },
-  {
-    id: "activeSubscriptions",
-    name: "Active Subscriptions",
-    icon: UsersIcon,
-    iconBackground: "bg-green-500",
-  },
-  {
-    id: "dailyOrders",
-    name: "Daily Orders",
-    icon: ShoppingCartIcon,
-    iconBackground: "bg-blue-500",
-  },
-  {
-    id: "retailSales",
-    name: "Retail Sales",
-    icon: ShoppingBagIcon,
-    iconBackground: "bg-purple-500",
-  },
-];
-
 const Stats = ({ stats }) => {
+  // Return null or a loading placeholder if stats is not available
+  if (!stats) {
+    return <div>Loading stats...</div>;
+  }
+
+  const statCards = [
+    {
+      name: "Total Revenue",
+      value: stats.totalRevenue.value,
+      change: stats.totalRevenue.change,
+      changeType: stats.totalRevenue.changeType,
+      period: stats.totalRevenue.period,
+      icon: CurrencyRupeeIcon,
+    },
+    {
+      name: "Active Users",
+      value: stats.activeUsers.value,
+      change: stats.activeUsers.change,
+      changeType: stats.activeUsers.changeType,
+      period: stats.activeUsers.period,
+      icon: UsersIcon,
+    },
+    {
+      name: "Daily Orders",
+      value: stats.dailyOrders?.value || "N/A", // Optional chaining for safety
+      change: stats.dailyOrders?.change || "N/A",
+      changeType: stats.dailyOrders?.changeType || "neutral",
+      period: stats.dailyOrders?.period || "N/A",
+      icon: ShoppingCartIcon,
+    },
+    {
+      name: "Total Received Payment",
+      value: stats.retailSales?.value || "N/A", // Optional chaining for safety
+      change: stats.retailSales?.change || "N/A",
+      changeType: stats.retailSales?.changeType || "neutral",
+      period: stats.retailSales?.period || "N/A",
+      icon: ChartBarIcon,
+    },
+  ];
+
   return (
     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      {statsConfig.map((item) => {
-        const stat = stats[item.id];
-        const Icon = item.icon;
-
-        return (
-          <div
-            key={item.id}
-            className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
-          >
-            <div className="flex items-center mb-5">
-              <div className={`p-3 rounded-md ${item.iconBackground}`}>
-                <Icon className="h-6 w-6 text-white" aria-hidden="true" />
+      {statCards.map((stat) => (
+        <div
+          key={stat.name}
+          className="bg-white overflow-hidden shadow rounded-lg"
+        >
+          <div className="p-5">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <stat.icon className="h-6 w-6 text-gray-400" />
               </div>
-              <div className="ml-4">
-                <dt className="text-sm font-medium text-gray-500 truncate">
-                  {item.name}
-                </dt>
-                <dd className="mt-1 text-2xl font-semibold text-gray-900">
-                  {stat.value}
-                </dd>
-              </div>
-            </div>
-            <div className="absolute bottom-0 inset-x-0 bg-gray-50 px-4 py-4 sm:px-6">
-              <div className="text-sm">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    {stat.changeType === "increase" ? (
-                      <ArrowUpIcon className="h-4 w-4 text-green-500" />
-                    ) : (
-                      <ArrowDownIcon className="h-4 w-4 text-red-500" />
-                    )}
-                    <span
-                      className={`ml-1 font-medium ${
+              <div className="ml-2 w-0 flex-1">
+                <dl>
+                  <dt className="text-sm font-medium text-gray-500 truncate">
+                    {stat.name}
+                  </dt>
+                  <dd className="flex items-baseline">
+                    <div className="text-2xl font-semibold text-gray-900">
+                      {stat.value}
+                    </div>
+                    <div
+                      className={`ml-2 flex items-baseline text-sm font-semibold ${
                         stat.changeType === "increase"
-                          ? "text-green-600"
-                          : "text-red-600"
+                          ? "text-yellow-600"
+                          : stat.changeType === "decrease"
+                          ? "text-red-600"
+                          : "text-gray-600"
                       }`}
                     >
+                      {stat.changeType === "increase" ? (
+                        <svg
+                          className="self-center flex-shrink-0 h-5 w-5 text-yellow-500"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      ) : stat.changeType === "decrease" ? (
+                        <svg
+                          className="self-center flex-shrink-0 h-5 w-5 text-red-500"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      ) : null}
+                      <span className="sr-only">
+                        {stat.changeType === "increase"
+                          ? "Increased by"
+                          : stat.changeType === "decrease"
+                          ? "Decreased by"
+                          : ""}
+                      </span>
                       {stat.change}
-                    </span>
-                  </div>
-                  <span className="text-gray-500">{stat.period}</span>
-                </div>
+                    </div>
+                  </dd>
+                </dl>
               </div>
             </div>
           </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
   );
 };

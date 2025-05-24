@@ -168,8 +168,8 @@ export default function InventoryReport() {
                     <div className="text-2xl font-semibold text-gray-900">
                       156
                     </div>
-                    <div className="ml-2 flex items-baseline text-sm font-semibold text-green-600">
-                      <ArrowTrendingUpIcon className="self-center flex-shrink-0 h-5 w-5 text-green-500" />
+                    <div className="ml-2 flex items-baseline text-sm font-semibold text-yellow-600">
+                      <ArrowTrendingUpIcon className="self-center flex-shrink-0 h-5 w-5 text-yellow-500" />
                       <span className="ml-1">8 new</span>
                     </div>
                   </dd>
@@ -220,8 +220,8 @@ export default function InventoryReport() {
                     <div className="text-2xl font-semibold text-gray-900">
                       ₹45,000
                     </div>
-                    <div className="ml-2 flex items-baseline text-sm font-semibold text-green-600">
-                      <ArrowTrendingUpIcon className="self-center flex-shrink-0 h-5 w-5 text-green-500" />
+                    <div className="ml-2 flex items-baseline text-sm font-semibold text-yellow-600">
+                      <ArrowTrendingUpIcon className="self-center flex-shrink-0 h-5 w-5 text-yellow-500" />
                       <span className="ml-1">12%</span>
                     </div>
                   </dd>
